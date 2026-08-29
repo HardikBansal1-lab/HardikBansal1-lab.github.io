@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Happy Teacher's Day! 🎓</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #112233;
+      --primary-light: #1b3552;
+      --accent: #f26522;
+      --accent-gold: #ffb703;
+      --chalkboard: #1b3b2b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.5;
+      padding-bottom: 90px; /* Space for the bottom celebration button */
+    }
+
+    /* Ambient Background Floating Elements */
+    .floating-decor {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.08;
+      color: var(--primary);
+      animation: floatMotion 14s infinite ease-in-out alternate;
+    }
+
+    @keyframes floatMotion {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-25px) rotate(15deg); }
+    }
+
+    /* Container */
+    .mobile-container {
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 16px 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top App Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0 16px;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-title i {
+      color: var(--accent-gold);
+      font-size: 1.15rem;
+    }
+
+    .icon-btn {
+      background: white;
+      border: 1px solid var(--border-color);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .icon-btn:active {
+      transform: scale(0.92);
+      background: #f1f5f9;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin: 10px 0 22px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3c7;
+      color: #b45309;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 8vw, 2.6rem);
+      line-height: 1.15;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #f26522, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      padding: 0 10px;
+    }
+
+    /* Personalizer Card */
+    .personalize-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-color);
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 14px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .personalize-card input {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px 0 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .personalize-card input:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-apply {
+      height: 48px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(242, 101, 34, 0.25);
+    }
+
+    .btn-apply:active {
+      transform: scale(0.98);
+      background: #db5414;
+    }
+
+    /* Chalkboard Tribute Section */
+    .chalkboard {
+      background: var(--chalkboard);
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0);
+      background-size: 18px 18px;
+      border: 7px solid #7c4a27;
+      border-radius: var(--radius-md);
+      color: white;
+      padding: 24px 18px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 22px;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.7), 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    .chalkboard h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.9rem;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .chalkboard p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: #f1f5f9;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .chalkboard .sign {
+      margin-top: 14px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.25rem;
+      color: #fde047;
+      font-weight: bold;
+    }
+
+    /* Interactive Quote Box */
+    .quote-card {
+      background: linear-gradient(135deg, #112233, #1e3a5a);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 22px 18px;
+      text-align: center;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(17, 34, 51, 0.15);
+    }
+
+    .quote-content {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      min-height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      transition: opacity 0.25s ease;
+    }
+
+    .quote-author {
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .quote-btn {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .quote-btn:active {
+      background: rgba(255,255,255,0.3);
+      transform: scale(0.95);
+    }
+
+    /* Feature Pillars */
+    .pillar-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .pillar-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .pillar-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: #fff7ed;
+      color: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .pillar-info h3 {
+      font-size: 0.98rem;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .pillar-info p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Curated Gratitude Board Showcase */
+    .wall-section {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 20px 16px;
+      margin-bottom: 20px;
+    }
+
+    .wall-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .wall-sub {
+      text-align: center;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .sticky-note {
+      padding: 14px 12px;
+      border-radius: 4px 4px 14px 4px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 120px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .sticky-note:active {
+      transform: scale(0.97);
+    }
+
+    .sticky-note .author {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-align: right;
+      margin-top: 8px;
+      opacity: 0.85;
+    }
+
+    .note-yellow { background: #fef08a; color: #713f12; }
+    .note-pink   { background: #fbcfe8; color: #831843; }
+    .note-blue   { background: #bae6fd; color: #0c4a6e; }
+    .note-green  { background: #bbf7d0; color: #14532d; }
+
+    /* Single Mobile Celebration Bottom Bar */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      padding: 12px 18px max(12px, env(safe-area-inset-bottom));
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.06);
+    }
+
+    .bar-btn-blast {
+      width: 100%;
+      max-width: 500px;
+      height: 52px;
+      background: linear-gradient(135deg, #f26522, #f59e0b);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(242, 101, 34, 0.35);
+    }
+
+    .bar-btn-blast:active {
+      transform: scale(0.98);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 15px 0 20px;
+    }
+
+    footer i {
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+
+  <i class="fa-solid fa-graduation-cap floating-decor" style="top: 10%; left: 5%; font-size: 3rem;"></i>
+  <i class="fa-solid fa-book floating-decor" style="top: 30%; right: 6%; font-size: 2.8rem; animation-delay: 2s;"></i>
+  <i class="fa-solid fa-award floating-decor" style="top: 60%; left: 4%; font-size: 3rem; animation-delay: 4s;"></i>
+
+  <div class="mobile-container">
+    
+    <header>
+      <div class="brand-title">
+        <i class="fa-solid fa-sparkles"></i> Teacher's Day
+      </div>
+      <button class="icon-btn" id="soundBtn" onclick="toggleAudio()" aria-label="Toggle Sound">
+        <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="badge"><i class="fa-solid fa-heart"></i> Happy Teacher's Day</div>
+      <h1>Honoring Our <span>Great Mentors</span></h1>
+      <p>Thank you for lighting the spark of imagination and inspiring us to reach higher.</p>
+    </section>
+
+    <section class="personalize-card">
+      <div class="input-wrapper">
+        <i class="fa-solid fa-user-graduate"></i>
+        <input type="text" id="teacherInput" placeholder="Teacher's Name (e.g. Mrs. Sharma)" maxlength="30" />
+      </div>
+      <button class="btn-apply" onclick="applyTeacherName()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Update Greeting
+      </button>
+    </section>
+
+    <section class="chalkboard">
+      <h2>Dear <span id="chalkName">Beloved Teacher</span>,</h2>
+      <p>
+        "You didn't just teach us subjects; you taught us how to think, dream, and conquer obstacles with kindness and resilience."
+      </p>
+      <div class="sign">— With gratitude from your students ✨</div>
+    </section>
+
+    <section class="quote-card">
+      <div class="quote-content" id="quoteText">
+        "Teaching is the one profession that creates all other professions."
+      </div>
+      <div class="quote-author" id="quoteAuthor">— Unknown</div>
+      <button class="quote-btn" onclick="nextQuote()">
+        <i class="fa-solid fa-shuffle"></i> Inspire Again
+      </button>
+    </section>
+
+    <section class="pillar-row">
+      <div class="pillar-card">
+        <div class="pillar-icon"><i class="fa-solid fa-compass"></i></div>
+        <div class="pillar-info">
+          <h3>Guiding Light</h3>
+          <p>Showing the right direction whenever things seemed uncertain.</p>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
+        <div class="pillar-info">
+          <h3>Unshakable Patience</h3>
+          <p>Always encouraging every question and celebrating every small win.</p>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon"><i class="fa-solid fa-fire"></i></div>
+        <div class="pillar-info">
+          <h3>Igniting Passion</h3>
+          <p>Transforming ordinary lessons into lifetime curiosities.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wall-section">
+      <h3 class="wall-title">Gratitude Board</h3>
+      <p class="wall-sub">Heartfelt words from students to extraordinary mentors</p>
+
+      <div class="notes-grid">
+        <div class="sticky-note note-yellow">
+          <p>"Thank you for always believing in me!"</p>
+          <span class="author">— Ananya</span>
+        </div>
+        <div class="sticky-note note-pink">
+          <p>"Math was scary until you taught it with so much joy."</p>
+          <span class="author">— Rohan</span>
+        </div>
+        <div class="sticky-note note-green">
+          <p>"Best guide, motivator, and mentor ever!"</p>
+          <span class="author">— Priya</span>
+        </div>
+        <div class="sticky-note note-blue">
+          <p>"Happy Teacher's Day to the most inspiring educator!"</p>
+          <span class="author">— David</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Crafted with <i class="fa-solid fa-heart"></i> for teachers everywhere.
+    </footer>
+
+  </div>
+
+  <div class="mobile-bottom-bar">
+    <button class="bar-btn-blast" onclick="triggerCelebration()">
+      <i class="fa-solid fa-sparkles"></i> Celebrate With Confetti! 🎉
+    </button>
+  </div>
+
+  <script>
+    // --- Haptic Feedback ---
+    function triggerHaptic(duration = 20) {
+      if ('vibrate' in navigator) {
+        navigator.vibrate(duration);
+      }
+    }
+
+    // --- Web Audio Synthesizer ---
+    let soundEnabled = true;
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function playMobileTone(freq = 520, duration = 0.25) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new AudioCtx();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function toggleAudio() {
+      triggerHaptic(30);
+      soundEnabled = !soundEnabled;
+      const icon = document.getElementById('soundIcon');
+      if (soundEnabled) {
+        icon.className = 'fa-solid fa-volume-high';
+        playMobileTone(650, 0.2);
+      } else {
+        icon.className = 'fa-solid fa-volume-xmark';
+      }
+    }
+
+    // --- Personalize Teacher Name ---
+    function applyTeacherName() {
+      triggerHaptic(25);
+      const input = document.getElementById('teacherInput').value.trim();
+      const chalk = document.getElementById('chalkName');
+
+      if (input) {
+        chalk.innerText = input;
+        playMobileTone(700, 0.2);
+        miniBurst();
+      } else {
+        chalk.innerText = 'Beloved Teacher';
+      }
+    }
+
+    // --- Quote Carousel ---
+    const quotes = [
+      { text: "Teaching is the one profession that creates all other professions.", author: "Unknown" },
+      { text: "Education is not the filling of a pail, but the lighting of a fire.", author: "W.B. Yeats" },
+      { text: "A great teacher inspires hope, ignites imagination, and instills love of learning.", author: "Brad Henry" },
+      { text: "One child, one teacher, one book, and one pen can change the world.", author: "Malala Yousafzai" }
+    ];
+    let qIdx = 0;
+
+    function nextQuote() {
+      triggerHaptic(20);
+      playMobileTone(480, 0.15);
+      const qEl = document.getElementById('quoteText');
+      const aEl = document.getElementById('quoteAuthor');
+
+      qEl.style.opacity = '0';
+      setTimeout(() => {
+        qIdx = (qIdx + 1) % quotes.length;
+        qEl.innerText = `"${quotes[qIdx].text}"`;
+        aEl.innerText = `— ${quotes[qIdx].author}`;
+        qEl.style.opacity = '1';
+      }, 200);
+    }
+
+    // --- Confetti Celebrations ---
+    function miniBurst() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 25,
+          spread: 45,
+          origin: { y: 0.8 }
+        });
+      }
+    }
+
+    function triggerCelebration() {
+      triggerHaptic([40, 60, 40]);
+      [440, 554, 659, 880].forEach((f, i) => setTimeout(() => playMobileTone(f, 0.3), i * 100));
+
+      if (typeof confetti !== 'function') return;
+
+      confetti({
+        particleCount: 80,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+
+      setTimeout(() => {
+        confetti({
+          particleCount: 50,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 50,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+      }, 250);
+    }
+
+    // Initial Confetti on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 35, spread: 60, origin: { y: 0.5 } });
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>
