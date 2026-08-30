@@ -1,0 +1,101 @@
+{
+  "theme": "Light",
+  "typography": {
+    "fonts": [
+      {
+        "family": "Cormorant Garamond",
+        "type": "Heading",
+        "weights": ["300", "400", "500", "600"],
+        "purpose": "Formal, timeless elegance for main headings and quotes."
+      },
+      {
+        "family": "Outfit",
+        "type": "Body",
+        "weights": ["300", "400", "500"],
+        "purpose": "Clean, modern readability for paragraphs and small labels."
+      }
+    ],
+    "scale": {
+      "h1": "text-5xl sm:text-6xl md:text-7xl font-serif tracking-tighter leading-none",
+      "h2": "text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight",
+      "h3": "text-xl sm:text-2xl font-serif",
+      "body": "text-base sm:text-lg font-sans leading-relaxed tracking-wide",
+      "overline": "text-xs sm:text-sm font-sans tracking-[0.2em] uppercase font-medium"
+    }
+  },
+  "colors": {
+    "background": "#F9F6F0",
+    "foreground": "#1A1C20",
+    "accent": "#E56B55",
+    "accent_hover": "#D45A45",
+    "muted": "#EBE5D9",
+    "muted_foreground": "#6B6E75",
+    "border": "#E2DCD0",
+    "card_bg": "#FFFFFF"
+  },
+  "visual_enhancers": {
+    "textures": "Include a fixed, pointer-events-none noise overlay (opacity 2-3%) across the entire app to give a tactile, editorial paper feel.",
+    "borders": "1px solid #E2DCD0 for structure and bento cards. No heavy drop shadows. Rely on delicate lines to separate sections and create the 'Swiss' minimal grid feel.",
+    "corners": "Slightly rounded (rounded-md to rounded-xl) to maintain friendliness while keeping it formal."
+  },
+  "grids_and_layouts": {
+    "container": "Max-width screen-xl mx-auto, generous padding (px-6 md:px-12).",
+    "spacing": "Use py-24 to py-32 for section vertical padding to let content breathe.",
+    "grid_system": "Use asymmetrical grid-cols-1 md:grid-cols-12 for content sections to avoid boring centered alignments (except hero)."
+  },
+  "motion": {
+    "scroll": "Lenis smooth scrolling for a premium, heavy momentum feel.",
+    "reveal": "Framer Motion staggered line-by-line text reveals (y: 40, opacity: 0 -> y: 0, opacity: 1). Use custom ease: [0.16, 1, 0.3, 1] duration: 0.8s.",
+    "interactions": "Hover states on buttons with accent color fill and subtle scale up. Image parallax on scroll.",
+    "festive": "Confetti burst from bottom center using 'canvas-confetti' upon clicking the CTA button."
+  },
+  "components": {
+    "cta_button": "Pill-shaped (rounded-full), border border-foreground px-6 py-3 font-sans uppercase tracking-widest text-xs hover:bg-accent hover:border-accent hover:text-white transition-colors duration-300.",
+    "marquee": "Use react-fast-marquee. Slow moving, font-serif, massive text separated by dot or star icons. Background: muted, Text: foreground.",
+    "chapter_label": "Overline text with '01', '02' followed by chapter name. Placed top-left of sections."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1572454591674-2739f30d8c40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxlbGVnYW50JTIwZmxvd2VyJTIwYm91cXVldHxlbnwwfHx8fDE3ODgwNzMzOTB8MA&ixlib=rb-4.1.0&q=85",
+        "category": "Chapter 01 - Gratitude Note",
+        "description": "Elegant flower bouquet to visually anchor the message of appreciation in the asymmetrical grid."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwYm9va3N8ZW58MHx8fHwxNzg4MDczMzkwfDA&ixlib=rb-4.1.0&q=85",
+        "category": "Chapter 02 - Quotes",
+        "description": "Vintage books in bookcase conveying wisdom and the essence of teaching."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1549791084-5f78368b208b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtaW5pbWFsJTIwc2Nob29sJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc4ODA3MzM5MHww&ixlib=rb-4.1.0&q=85",
+        "category": "Footer / Background Elements",
+        "description": "Clean, minimal architecture to add visual depth to the footer or transition areas."
+      }
+    ]
+  },
+  "libraries_and_tools": [
+    "framer-motion",
+    "@studio-freight/react-lenis",
+    "canvas-confetti",
+    "react-fast-marquee",
+    "lucide-react"
+  ],
+  "universal_guidelines_for_main_agent": [
+    "All interactive and key informational elements MUST include a `data-testid` attribute.",
+    "Implement a noise overlay div with pointer-events-none fixed over the entire screen.",
+    "Ensure spacing is 2-3x larger than typical UI design. Emphasize negative space.",
+    "Avoid generic centered layouts except for the hero statement.",
+    "Do not use generic 'transition: all' in CSS. Be specific with transition properties.",
+    "Use pure HTML and Tailwind for structural layout; keep it organic and asymmetrical where possible. Do not over-rely on rigid Shadcn Cards.",
+    "No absolute transparent backgrounds on headers; if sticky, use backdrop-blur.",
+    "Ensure text contrast meets APCA/WCAG standards. If overlaying text on images, use subtle gradient backgrounds.",
+    "Follow mobile-first approach meticulously, as users will scan QR codes via their phones."
+  ],
+  "section_blueprints": {
+    "hero": "100vh height. Centered layout. Large Serif heading 'Happy Teacher's Day' masked and revealed line-by-line using Framer Motion. A secondary sans-serif subtitle. A button saying 'TAP FOR JOY' that triggers confetti. Background color: #F9F6F0.",
+    "chapter_01_gratitude": "Numbered chapter '01. Gratitude'. Asymmetrical grid (md:grid-cols-12). Left column (col-span-12 md:col-span-7): large serif body text explaining gratitude. Right column (col-span-12 md:col-span-4 md:col-start-9): tall elegant image of the flower bouquet with parallax effect.",
+    "chapter_02_quotes": "Numbered chapter '02. Wisdom'. Grid layout with bento-style cards (md:grid-cols-2 or 3). Each card has a white background (#FFFFFF) with a 1px border (#E2DCD0). Quote text in serif, author in sans-serif overline format.",
+    "chapter_03_wishes": "Numbered chapter '03. Wishes'. This section features the slow editorial marquee strip extending full width. Marquee text: 'THANK YOU • INSPIRATION • GUIDANCE'. Below it, a final message of collective appreciation.",
+    "footer": "Massive typography sign-off '[School Name] 2026' (use placeholder 'St. Jude's Academy' or similar). Minimal, elegant, lots of negative space (py-32). Top border 1px solid #E2DCD0."
+  }
+}
