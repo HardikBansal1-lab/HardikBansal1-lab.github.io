@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#F9F6F0" />
+<meta name="description" content="Happy Teacher's Day 2026 — a note of love and gratitude for the teachers of Delhi Public School, Hapur. Scan for happy vibes." />
+<title>Happy Teacher's Day 2026 — With Love &amp; Gratitude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ivory:#F9F6F0; --paper:#FFFFFF; --ink:#1A1C20; --coral:#E56B55;
+  --sand:#EBE5D9; --stone:#6B6E75; --line:#E2DCD0;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Outfit",ui-sans-serif,system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--coral);color:var(--ivory)}
+img{display:block;max-width:100%}
+.noise{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- shared ---------- */
+.overline{font-size:.75rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ink);border-radius:999px;
+  background:transparent;color:var(--ink);padding:.9rem 1.75rem;font-family:var(--sans);font-size:.75rem;
+  font-weight:500;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;
+  transition:background-color .3s,border-color .3s,color .3s,transform .2s}
+.btn:hover{background:var(--coral);border-color:var(--coral);color:var(--ivory);transform:scale(1.05)}
+.btn:active{transform:scale(.96)}
+.btn svg{width:14px;height:14px}
+.fade{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.fade.in{opacity:1;transform:none}
+.chapter{display:flex;align-items:center;gap:1rem}
+.chapter .num{font-family:var(--serif);font-style:italic;font-size:1.125rem;color:var(--coral)}
+.chapter .rule{height:1px;width:2.5rem;background:var(--line)}
+.chapter .label{font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--stone)}
+.section{padding:6rem 1.5rem;max-width:80rem;margin:0 auto}
+@media(min-width:768px){.section{padding:8rem 3rem}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:0 1.5rem}
+.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;will-change:transform,opacity}
+.hero .overline{margin-bottom:2rem}
+.headline{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,15vw,10.5rem);line-height:.95;letter-spacing:-.02em}
+.headline .mask{display:block;overflow:hidden;padding:.06em 0;margin:-.06em 0}
+.headline .line{display:block;transform:translateY(115%);will-change:transform}
+.headline em{font-weight:300;font-style:italic}
+.coral-it{font-weight:300;font-style:italic;color:var(--coral)}
+#joyBtn{margin-top:2.5rem}
+.ring{position:absolute;border:1px solid var(--line);border-radius:50%;pointer-events:none}
+.ring-1{width:18rem;height:18rem;left:-6rem;top:12%}
+.ring-2{width:20rem;height:20rem;right:-8rem;bottom:8%}
+@media(min-width:768px){.ring-1{width:24rem;height:24rem}}
+.spark{position:absolute;color:var(--coral);pointer-events:none}
+.spark svg{display:block}
+.spark-1{right:12%;top:16%}
+.spark-2{left:10%;bottom:18%;opacity:.7}
+.badge{position:absolute;bottom:2.5rem;right:2.5rem;width:7rem;height:7rem;display:none;pointer-events:none}
+@media(min-width:768px){.badge{display:block}}
+.badge .spin{width:100%;height:100%;animation:spin 20s linear infinite}
+.badge svg.center{position:absolute;inset:0;margin:auto;width:16px;height:16px;color:var(--coral)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-hint{position:absolute;bottom:2rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--stone);
+  font-size:.625rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.reveal-fade{opacity:0;animation:fadeUp .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ---------- gratitude ---------- */
+.grid-12{display:grid;grid-template-columns:1fr;gap:3rem;margin-top:3rem}
+@media(min-width:768px){.grid-12{grid-template-columns:repeat(12,1fr);gap:2rem}
+  .col-text{grid-column:span 7}.col-img{grid-column:9/span 4}}
+.col-text h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.01em}
+.col-text .body{margin-top:2rem;max-width:36rem;font-size:1.0625rem;line-height:1.75;color:var(--stone)}
+.col-text .sign{margin-top:2.5rem;font-family:var(--serif);font-style:italic;font-size:1.25rem}
+.sign-sub{display:block;margin-top:.25rem;font-family:var(--sans);font-style:normal;font-size:.875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.img-frame{aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line);border-radius:.75rem}
+.img-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);will-change:transform}
+.caption{margin-top:.75rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+
+/* ---------- wisdom ---------- */
+.bento{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:3rem}
+@media(min-width:768px){.bento{grid-template-columns:repeat(3,1fr)}.span2{grid-column:span 2}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:.75rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
+@media(min-width:768px){.card{padding:2.5rem}}
+.card svg{width:20px;height:20px;color:var(--coral)}
+.card q{font-family:var(--serif);font-weight:500;font-size:1.375rem;line-height:1.3;letter-spacing:-.01em;quotes:"\201C" "\201D"}
+@media(min-width:640px){.card q{font-size:1.5rem}}
+.card cite{font-style:normal;font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--stone)}
+.img-tile{overflow:hidden;border:1px solid var(--line);border-radius:.75rem}
+.img-tile img{width:100%;height:100%;min-height:14rem;object-fit:cover;transition:transform .7s var(--ease)}
+.img-tile:hover img{transform:scale(1.05)}
+
+/* ---------- wishes ---------- */
+.flush{max-width:none;padding-left:0;padding-right:0}
+.flush .chapter{margin:0 1.5rem}
+@media(min-width:768px){.flush .chapter{margin:0 auto;max-width:calc(80rem - 6rem)}}
+.marquee{margin-top:3rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--sand);padding:2rem 0;overflow:hidden}
+@media(min-width:768px){.marquee{padding:2.5rem 0}}
+.marquee-track{display:flex;width:max-content;animation:marquee 45s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;align-items:center}
+.marquee-group span.word{margin:0 2rem;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.25rem,5vw,3.75rem);letter-spacing:-.01em;white-space:nowrap}
+.marquee-group .star{color:var(--coral);font-size:1.75rem;line-height:1}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.closing{max-width:48rem;margin:0 auto;padding:5rem 1.5rem 0;text-align:center}
+@media(min-width:768px){.closing{padding-top:7rem}}
+.closing h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.2;letter-spacing:-.01em}
+.closing h2 em{font-style:italic;color:var(--coral)}
+.closing p{margin-top:2rem;font-size:1.0625rem;line-height:1.75;color:var(--stone)}
+.closing .btn{margin-top:2.5rem}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem}
+@media(min-width:768px){footer{padding:8rem 3rem}}
+.school{margin-top:1.5rem;font-family:var(--serif);font-weight:500;font-size:clamp(3rem,13vw,9rem);line-height:1;letter-spacing:-.02em}
+.foot-note{margin-top:2.5rem;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+</style>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="ring ring-1" data-depth="50" aria-hidden="true"></div>
+  <div class="ring ring-2" data-depth="50" aria-hidden="true"></div>
+  <div class="spark spark-1" data-depth="-35" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 2.3 11.6 7l4.7 1.7-4.7 1.7L9.9 15 8.2 10.4 3.5 8.7 8.2 7z"/><path d="M18.5 13.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+  </div>
+  <div class="spark spark-2" data-depth="-35" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+  </div>
+
+  <div class="hero-inner" id="heroInner">
+    <p class="overline reveal-fade" style="--d:.15s">September 5, 2026 &mdash; With Love &amp; Gratitude</p>
+    <h1 class="headline">
+      <span class="mask"><span class="line"><em>Happy</em></span></span>
+      <span class="mask"><span class="line">Teacher&rsquo;s</span></span>
+      <span class="mask"><span class="line">Day <span class="coral-it">2026</span></span></span>
+    </h1>
+    <button class="btn reveal-fade" id="joyBtn" style="--d:1.2s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 2.3 11.6 7l4.7 1.7-4.7 1.7L9.9 15 8.2 10.4 3.5 8.7 8.2 7z"/><path d="M18.5 13.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+      Tap for joy
+    </button>
+  </div>
+
+  <div class="badge" aria-hidden="true">
+    <div class="spin">
+      <svg viewBox="0 0 100 100" width="112" height="112" fill="#1A1C20">
+        <defs><path id="badgeCircle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+        <text font-size="7.6" letter-spacing="2.4" font-family="Outfit,sans-serif" style="text-transform:uppercase">
+          <textPath href="#badgeCircle" textLength="236">Happy Teacher&rsquo;s Day &middot; 2026 &middot;</textPath>
+        </text>
+      </svg>
+    </div>
+    <svg class="center" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 2.3 11.6 7l4.7 1.7-4.7 1.7L9.9 15 8.2 10.4 3.5 8.7 8.2 7z"/></svg>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</header>
+
+<!-- ============ 01 · GRATITUDE ============ -->
+<section class="section">
+  <div class="chapter fade"><span class="num">01</span><span class="rule"></span><span class="label">Gratitude</span></div>
+  <div class="grid-12">
+    <div class="col-text">
+      <h2 class="fade" style="--d:.1s">A note for the ones who stayed after the bell.</h2>
+      <p class="body fade" style="--d:.2s">Dear teachers, before we knew the answers, you taught us how to ask better questions. You turned classrooms into places where it was safe to try, to fail, and to try again. The lessons you gave us reach far beyond the syllabus &mdash; they walk with us into every room we will ever enter. Today, and every day, we are grateful.</p>
+      <p class="sign fade" style="--d:.3s">With all our respect,
+        <span class="sign-sub">The students of Delhi Public School, Hapur</span>
+      </p>
+    </div>
+    <div class="col-img">
+      <div class="img-frame fade" style="--d:.15s">
+        <img id="parallaxImg" src="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxlbGVnYW50JTIwZmxvd2VyJTIwYm91cXVldHxlbnwwfHx8fDE3ODgwNzMzOTB8MA&ixlib=rb-4.1.0&q=85&w=1200&auto=format&fit=crop" alt="An elegant bouquet, a small token of appreciation for our teachers" />
+      </div>
+      <p class="caption fade" style="--d:.25s">For you, today and always</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · WISDOM ============ -->
+<section class="section">
+  <div class="chapter fade"><span class="num">02</span><span class="rule"></span><span class="label">Wisdom</span></div>
+  <div class="bento">
+    <div class="card span2 fade" style="--d:.1s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/><path d="M20 11h-4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/></svg>
+      <q>A teacher affects eternity; he can never tell where his influence stops.</q>
+      <cite>Henry Adams</cite>
+    </div>
+    <div class="img-tile fade" style="--d:.2s">
+      <img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwYm9va3N8ZW58MHx8fHwxNzg4MDczMzkwfDA&ixlib=rb-4.1.0&q=85&w=1200&auto=format&fit=crop" alt="Well-loved books, the quiet companions of every teacher" />
+    </div>
+    <div class="card fade" style="--d:.15s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/><path d="M20 11h-4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/></svg>
+      <q>Every child deserves a champion &mdash; an adult who will never give up on them.</q>
+      <cite>Rita Pierson</cite>
+    </div>
+    <div class="card span2 fade" style="--d:.25s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/><path d="M20 11h-4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/></svg>
+      <q>It is the supreme art of the teacher to awaken joy in creative expression and knowledge.</q>
+      <cite>Albert Einstein</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · WISHES ============ -->
+<section class="section flush">
+  <div class="chapter fade"><span class="num">03</span><span class="rule"></span><span class="label">Wishes</span></div>
+  <div class="marquee fade">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="word">Thank You</span><span class="star">&#10035;</span>
+        <span class="word">Inspiration</span><span class="star">&#10035;</span>
+        <span class="word">Guidance</span><span class="star">&#10035;</span>
+        <span class="word">Patience</span><span class="star">&#10035;</span>
+        <span class="word">Belief</span><span class="star">&#10035;</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="word">Thank You</span><span class="star">&#10035;</span>
+        <span class="word">Inspiration</span><span class="star">&#10035;</span>
+        <span class="word">Guidance</span><span class="star">&#10035;</span>
+        <span class="word">Patience</span><span class="star">&#10035;</span>
+        <span class="word">Belief</span><span class="star">&#10035;</span>
+      </div>
+    </div>
+  </div>
+  <div class="closing">
+    <h2 class="fade">May your coffee be warm, your classes be kind, and your heart as full as <em>you make ours.</em></h2>
+    <p class="fade" style="--d:.15s">From every student you have ever believed in &mdash; thank you. We hope today brings you even a fraction of the joy you give us all year.</p>
+    <button class="btn fade" id="joyBtn2" style="--d:.25s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 2.3 11.6 7l4.7 1.7-4.7 1.7L9.9 15 8.2 10.4 3.5 8.7 8.2 7z"/><path d="M18.5 13.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+      One more burst of joy
+    </button>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p class="overline fade">With love, from your students</p>
+  <p class="school fade" style="--d:.1s">Delhi Public School, Hapur</p>
+  <p class="foot-note fade" style="--d:.2s">Teacher&rsquo;s Day &middot; 2026</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+/* Smooth momentum scrolling */
+if (window.Lenis) {
+  var lenis = new Lenis({ lerp: 0.09 });
+  (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
+}
+
+/* Hero: masked line-by-line reveal */
+if (window.gsap) {
+  gsap.to(".hero .mask .line", { y: 0, duration: 1.1, ease: "power4.out", stagger: 0.15, delay: 0.35 });
+} else {
+  document.querySelectorAll(".hero .mask .line").forEach(function (el) { el.style.transform = "none"; });
+}
+
+/* Scroll reveals */
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { rootMargin: "0px 0px -60px 0px" });
+document.querySelectorAll(".fade").forEach(function (el) { io.observe(el); });
+
+/* Hero mouse parallax */
+var hero = document.getElementById("hero");
+var layers = hero.querySelectorAll("[data-depth]");
+var tx = 0, ty = 0, cx = 0, cy = 0;
+hero.addEventListener("mousemove", function (e) {
+  var r = hero.getBoundingClientRect();
+  tx = (e.clientX - r.left) / r.width - 0.5;
+  ty = (e.clientY - r.top) / r.height - 0.5;
+});
+(function loop() {
+  cx += (tx - cx) * 0.06; cy += (ty - cy) * 0.06;
+  layers.forEach(function (l) {
+    var d = parseFloat(l.dataset.depth);
+    l.style.transform = "translate(" + (cx * d) + "px," + (cy * d) + "px)";
+  });
+  requestAnimationFrame(loop);
+})();
+
+/* Scroll parallax: hero drift + bouquet drift */
+var heroInner = document.getElementById("heroInner");
+var pImg = document.getElementById("parallaxImg");
+function onScroll() {
+  var y = window.scrollY, h = window.innerHeight;
+  var p = Math.min(y / (h * 0.75), 1);
+  heroInner.style.opacity = 1 - p;
+  heroInner.style.transform = "translateY(" + y * 0.15 + "px)";
+  var fr = pImg.parentElement.getBoundingClientRect();
+  var prog = (fr.top + fr.height / 2 - h / 2) / h;
+  pImg.style.transform = "translateY(" + (prog * -10) + "%) scale(1.18)";
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+/* Confetti */
+var COLORS = ["#E56B55", "#F2B25C", "#1A1C20", "#EBE5D9"];
+function fireConfetti() {
+  if (!window.confetti) return;
+  confetti({ particleCount: 130, spread: 85, startVelocity: 45, origin: { y: 0.85 }, colors: COLORS, disableForReducedMotion: true });
+  setTimeout(function () {
+    confetti({ particleCount: 70, spread: 110, startVelocity: 32, origin: { y: 0.72 }, colors: COLORS, disableForReducedMotion: true });
+  }, 220);
+}
+document.getElementById("joyBtn").addEventListener("click", fireConfetti);
+document.getElementById("joyBtn2").addEventListener("click", fireConfetti);
+</script>
+</body>
+</html>
