@@ -8,14 +8,16 @@
 <title>Happy Teacher's Day 2026 — With Love &amp; Gratitude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
   --ivory:#FAF3E3; --paper:#FFFFFF; --ink:#211E17; --coral:#C4972F;
-  --sand:#F2E8CE; --stone:#7D7461; --line:#E8DDBE;
+  --sand:#F2E8CE; --stone:#6A614E; --line:#E3D6B5;
+  --forest:#1A4D2E; --royal-blue:#1E3A8A;
   --ease:cubic-bezier(.16,1,.3,1);
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"Outfit",ui-sans-serif,system-ui,sans-serif;
+  font-size: 18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:auto}
@@ -28,132 +30,234 @@ img{display:block;max-width:100%}
 #bgCanvas{position:fixed;inset:0;z-index:2;pointer-events:none}
 
 /* ---------- shared ---------- */
-.overline{font-size:.75rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ink);border-radius:999px;
-  background:transparent;color:var(--ink);padding:.9rem 1.75rem;font-family:var(--sans);font-size:.75rem;
-  font-weight:500;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;
+.overline{font-size:.9rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--stone)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid var(--ink);border-radius:999px;
+  background:transparent;color:var(--ink);padding:1.1rem 2.2rem;font-family:var(--sans);font-size:.9rem;
+  font-weight:600;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
   transition:background-color .3s,border-color .3s,color .3s,transform .2s}
-.btn:hover{background:var(--coral);border-color:var(--coral);color:var(--ivory);transform:scale(1.05)}
+.btn:hover{background:var(--coral);border-color:var(--coral);color:var(--ivory);transform:scale(1.04)}
 .btn:active{transform:scale(.96)}
-.btn svg{width:14px;height:14px}
-.fade{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.btn svg{width:18px;height:18px}
+.fade{opacity:0;transform:translateY(25px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
 .fade.in{opacity:1;transform:none}
-.chapter{display:flex;align-items:center;gap:1rem}
-.chapter .num{font-family:var(--serif);font-style:italic;font-size:1.125rem;color:var(--coral)}
-.chapter .rule{height:1px;width:2.5rem;background:var(--line)}
-.chapter .label{font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--stone)}
-.section{padding:6rem 1.5rem;max-width:80rem;margin:0 auto;position:relative;z-index:10}
-@media(min-width:768px){.section{padding:8rem 3rem}}
+
+/* Section Header Typography */
+.chapter{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.6rem}
+.chapter .num{font-family:var(--serif);font-style:italic;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--coral);line-height:1}
+.chapter .rule{height:2px;width:3.5rem;background:var(--line);flex-shrink:0}
+.chapter .label{font-family:var(--serif);font-size:clamp(2.4rem,8.5vw,3.8rem);font-weight:700;letter-spacing:-.01em;text-transform:none;color:var(--royal-blue);line-height:1}
+
+.section{padding:3.5rem 1.25rem;max-width:84rem;margin:0 auto;position:relative;z-index:10}
+@media(min-width:768px){.section{padding:5.5rem 3rem}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:0 1.5rem;background:radial-gradient(ellipse 60% 50% at 50% 38%, rgba(196,151,47,.15), transparent 70%);z-index:10}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;will-change:transform,opacity}
-.hero .overline{margin-bottom:2rem}
-.headline{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,15vw,10.5rem);line-height:.95;letter-spacing:-.02em}
-.headline .mask{display:block;overflow:hidden;padding:.06em 0;margin:-.06em 0}
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:3.25rem;
+  padding-bottom:2.5rem;
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  overflow:hidden;
+  background:radial-gradient(ellipse 70% 55% at 50% 30%, rgba(26,77,46,.12), transparent 72%);
+  z-index:10;
+}
+@media(min-width:768px){
+  .hero{
+    justify-content:center;
+    padding-top:0;
+    padding-bottom:0;
+  }
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  width:100%;
+  margin-top:0;
+  will-change:transform,opacity;
+}
+.hero .overline{margin-bottom:1.1rem;line-height:1.4}
+.headline{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(5.2rem,22vw,13rem);
+  line-height:.92;
+  letter-spacing:-.03em;
+  color:var(--forest);
+}
+.headline .mask{display:block;overflow:hidden;padding:.12em 0;margin:-.12em 0}
 .headline .line{display:block;transform:translateY(115%);will-change:transform}
-.headline em{font-weight:300;font-style:italic}
-.coral-it{font-weight:300;font-style:italic;color:var(--coral)}
-#joyBtn{margin-top:2.5rem}
+.headline em{font-weight:400;font-style:italic}
+
+/* Original Warm Accent for 2026 */
+.coral-it{font-weight:400;font-style:italic;color:var(--coral)}
+
+#joyBtn{margin-top:2.2rem;box-shadow:0 4px 18px rgba(0,0,0,.06)}
 .ring{position:absolute;border:1px solid var(--line);border-radius:50%;pointer-events:none}
-.ring-1{width:18rem;height:18rem;left:-6rem;top:12%}
-.ring-2{width:20rem;height:20rem;right:-8rem;bottom:8%}
-@media(min-width:768px){.ring-1{width:24rem;height:24rem}}
+.ring-1{width:22rem;height:22rem;left:-8rem;top:10%}
+.ring-2{width:24rem;height:24rem;right:-10rem;bottom:6%}
+@media(min-width:768px){.ring-1{width:26rem;height:26rem}}
 .spark{position:absolute;color:var(--coral);pointer-events:none}
 .spark svg{display:block}
-.spark-1{right:12%;top:16%}
-.spark-2{left:10%;bottom:18%;opacity:.7}
-.badge{position:absolute;bottom:2.5rem;right:2.5rem;width:7rem;height:7rem;display:none;pointer-events:none}
+.spark-1{right:10%;top:14%}
+.spark-2{left:8%;bottom:16%;opacity:.75}
+.badge{position:absolute;bottom:2.5rem;right:2.5rem;width:8.5rem;height:8.5rem;display:none;pointer-events:none}
 @media(min-width:768px){.badge{display:block}}
 .badge .spin{width:100%;height:100%;animation:spin 20s linear infinite}
-.badge svg.center{position:absolute;inset:0;margin:auto;width:16px;height:16px;color:var(--coral)}
+.badge svg.center{position:absolute;inset:0;margin:auto;width:20px;height:20px;color:var(--forest)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.scroll-hint{position:absolute;bottom:2rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--stone);
-  font-size:.625rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.scroll-hint{
+  position:relative;
+  margin-top:auto;
+  padding-top:2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.45rem;
+  color:var(--stone);
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  animation:bob 2s ease-in-out infinite;
+}
+@media(min-width:768px){
+  .scroll-hint{
+    position:absolute;
+    bottom:1.5rem;
+    margin-top:0;
+    padding-top:0;
+  }
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 .reveal-fade{opacity:0;animation:fadeUp .9s var(--ease) forwards;animation-delay:var(--d,0s)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ---------- gratitude ---------- */
-.grid-12{display:grid;grid-template-columns:1fr;gap:3rem;margin-top:3rem}
-@media(min-width:768px){.grid-12{grid-template-columns:repeat(12,1fr);gap:2rem}
-  .col-text{grid-column:span 7}.col-img{grid-column:9/span 4}}
-.col-text h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.01em}
-.col-text .body{margin-top:2rem;max-width:36rem;font-size:1.0625rem;line-height:1.75;color:var(--stone)}
-.col-text .sign{margin-top:2.5rem;font-family:var(--serif);font-style:italic;font-size:1.25rem}
-.sign-sub{display:block;margin-top:.25rem;font-family:var(--sans);font-style:normal;font-size:.875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
-.img-frame{aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line);border-radius:.75rem}
-.img-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);will-change:transform}
-.caption{margin-top:.75rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.grid-12{display:grid;grid-template-columns:1fr;gap:1.75rem;margin-top:0.5rem}
+@media(min-width:768px){.grid-12{grid-template-columns:repeat(12,1fr);gap:2.5rem}
+  .col-text{grid-column:span 7}.col-img{grid-column:8/span 5}}
+.col-text h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.15;letter-spacing:-.015em}
+.col-text .body{margin-top:1.2rem;font-size:1.28rem;line-height:1.7;font-weight:400;color:var(--stone)}
+.col-text .sign{margin-top:1.8rem;font-family:var(--serif);font-style:italic;font-size:1.6rem;font-weight:500}
+.sign-sub{display:block;margin-top:.4rem;font-family:var(--sans);font-style:normal;font-size:1rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.img-frame{aspect-ratio:16/11;overflow:hidden;border:1px solid var(--line);border-radius:.85rem;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+@media(min-width:768px){.img-frame{aspect-ratio:4/5}}
+.img-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
+.caption{margin-top:.75rem;font-size:.9rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
 
 /* ---------- wisdom ---------- */
-.bento{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:3rem}
+.bento{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:0.5rem}
 @media(min-width:768px){.bento{grid-template-columns:repeat(3,1fr)}.span2{grid-column:span 2}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:.75rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
-@media(min-width:768px){.card{padding:2.5rem}}
-.card svg{width:20px;height:20px;color:var(--coral)}
-.card q{font-family:var(--serif);font-weight:500;font-size:1.375rem;line-height:1.3;letter-spacing:-.01em;quotes:"\201C" "\201D"}
-@media(min-width:640px){.card q{font-size:1.5rem}}
-.card cite{font-style:normal;font-size:.75rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--stone)}
-.img-tile{overflow:hidden;border:1px solid var(--line);border-radius:.75rem}
-.img-tile img{width:100%;height:100%;min-height:14rem;object-fit:cover;transition:transform .7s var(--ease)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:.85rem;padding:2rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem;box-shadow:0 4px 18px rgba(0,0,0,.03)}
+@media(min-width:768px){.card{padding:2.75rem}}
+.card svg{width:28px;height:28px;color:var(--coral)}
+.card q{font-family:var(--serif);font-weight:600;font-size:clamp(1.65rem,6vw,1.9rem);line-height:1.32;letter-spacing:-.01em;quotes:"\201C" "\201D"}
+.card cite{font-style:normal;font-size:.92rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+.img-tile{overflow:hidden;border:1px solid var(--line);border-radius:.85rem;box-shadow:0 4px 18px rgba(0,0,0,.03)}
+.img-tile img{width:100%;height:100%;min-height:16rem;object-fit:cover;transition:transform .7s var(--ease)}
 .img-tile:hover img{transform:scale(1.05)}
 
 /* ---------- Interactive Flip Cards ---------- */
-.flip-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+.flip-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:0.5rem}
 @media(min-width:640px){.flip-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.flip-grid{grid-template-columns:repeat(4,1fr)}}
-.flip-card{perspective:1000px;height:15.5rem;cursor:pointer}
-.flip-inner{position:relative;width:100%;height:100%;transition:transform .8s var(--ease);transform-style:preserve-3d;border-radius:.75rem}
+.flip-card{perspective:1000px;min-height:14.5rem;height:auto;cursor:pointer}
+.flip-inner{position:relative;width:100%;min-height:14.5rem;transition:transform .8s var(--ease);transform-style:preserve-3d;border-radius:.85rem}
 .flip-card.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-front, .flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line)}
+.flip-front, .flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:.85rem;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.03)}
 .flip-front{background:var(--paper)}
-.flip-front .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);font-weight:500}
-.flip-front h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;line-height:1.2}
-.flip-front .hint{font-size:.7rem;color:var(--stone);letter-spacing:.15em;text-transform:uppercase}
+.flip-front .tag{font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-weight:600}
+.flip-front h3{font-family:var(--serif);font-size:1.75rem;font-weight:600;line-height:1.2}
+.flip-front .hint{font-size:.85rem;color:var(--stone);letter-spacing:.16em;text-transform:uppercase;font-weight:500}
 .flip-back{background:var(--sand);transform:rotateY(180deg);color:var(--ink)}
-.flip-back p{font-family:var(--serif);font-style:italic;font-size:1.02rem;line-height:1.45}
-.flip-back .author{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);font-style:normal;margin-top:.5rem}
+.flip-back p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.45;font-weight:500}
+.flip-back .author{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);font-style:normal;font-weight:600;margin-top:.4rem}
 
 /* ---------- wishes ---------- */
 .flush{max-width:none;padding-left:0;padding-right:0}
-.flush .chapter{margin:0 1.5rem}
-@media(min-width:768px){.flush .chapter{margin:0 auto;max-width:calc(80rem - 6rem)}}
-.marquee{margin-top:3rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--sand);padding:2rem 0;overflow:hidden}
-@media(min-width:768px){.marquee{padding:2.5rem 0}}
+.flush .chapter{margin:0 1.25rem 1.2rem}
+@media(min-width:768px){.flush .chapter{margin:0 auto 1.6rem;max-width:calc(84rem - 6rem)}}
+.marquee{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);background:var(--sand);padding:1.8rem 0;overflow:hidden}
+@media(min-width:768px){.marquee{padding:2.4rem 0}}
 .marquee-track{display:flex;width:max-content;animation:marquee 39s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-group{display:flex;align-items:center}
-.marquee-group span.word{margin:0 2rem;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.25rem,5vw,3.75rem);letter-spacing:-.01em;white-space:nowrap}
-.marquee-group .star{color:var(--coral);font-size:1.75rem;line-height:1}
+.marquee-group span.word{margin:0 1.6rem;font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(2.8rem,8vw,4.4rem);letter-spacing:-.015em;white-space:nowrap}
+.marquee-group .star{color:var(--coral);font-size:2.2rem;line-height:1}
 @keyframes marquee{to{transform:translateX(-50%)}}
-.closing{max-width:48rem;margin:0 auto;padding:5rem 1.5rem 0;text-align:center}
-@media(min-width:768px){.closing{padding-top:7rem}}
-.closing h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.2;letter-spacing:-.01em}
-.closing h2 em{font-style:italic;color:var(--coral)}
-.closing p{margin-top:2rem;font-size:1.0625rem;line-height:1.75;color:var(--stone)}
-.closing .btn{margin-top:2.5rem}
+.closing{max-width:54rem;margin:0 auto;padding:3.2rem 1.25rem 0;text-align:center}
+@media(min-width:768px){.closing{padding-top:5.5rem}}
+.closing h2{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,8vw,3.6rem);line-height:1.22;letter-spacing:-.015em}
+
+/* Original Warm Accent for 'you make ours' */
+.closing h2 em{
+  font-style:italic;
+  font-weight:400;
+  color:var(--coral);
+}
+
+.closing p{margin-top:1.3rem;font-size:1.28rem;line-height:1.7;font-weight:400;color:var(--stone)}
+.closing .btn{margin-top:2.2rem}
 
 /* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;position:relative;z-index:10}
-@media(min-width:768px){footer{padding:8rem 3rem}}
-.school{margin-top:1.5rem;font-family:var(--serif);font-weight:500;font-size:clamp(3rem,13vw,9rem);line-height:1;letter-spacing:-.02em;
+footer{border-top:1.5px solid var(--line);text-align:center;padding:4.5rem 1.25rem 6.5rem;position:relative;z-index:10}
+@media(min-width:768px){footer{padding:7rem 3rem}}
+.school{margin-top:1.2rem;font-family:var(--serif);font-weight:600;font-size:clamp(3.5rem,16.5vw,10.5rem);line-height:1.02;letter-spacing:-.025em;
   background:linear-gradient(110deg,#8a6a1d 0%,#c4972f 22%,#f6e27a 42%,#c4972f 62%,#8a6a1d 82%,#e9c767 100%);
   background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:foil-shine 6s linear infinite}
 
-/* Left-to-right gold shine animation */
 @keyframes foil-shine{0%{background-position:220% center}100%{background-position:-220% center}}
 
-.foot-note{margin-top:2.5rem;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+.foot-note{margin-top:1.8rem;font-size:.92rem;letter-spacing:.28em;font-weight:600;text-transform:uppercase;color:var(--stone)}
 
 /* Floating Control Bar */
-.control-bar{position:fixed;bottom:1.5rem;left:1.5rem;z-index:70;display:flex;align-items:center;gap:.75rem}
-.music-btn, .heart-btn{width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line);background:rgba(250,243,227,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,color .3s,transform .2s;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-.music-btn:hover, .heart-btn:hover{border-color:var(--coral);color:var(--coral);transform:scale(1.08)}
-.music-btn svg, .heart-btn svg{width:18px;height:18px}
+.control-bar{
+  position:fixed;
+  bottom:1.4rem;
+  left:1.4rem;
+  z-index:70;
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+}
+.music-btn, .heart-btn{
+  width:3.4rem;
+  height:3.4rem;
+  flex:0 0 3.4rem;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(250,243,227,.9);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:var(--ink);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:border-color .3s,color .3s,transform .2s;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+  overflow:visible;
+  padding:0;
+}
+.music-btn:hover, .heart-btn:hover{border-color:var(--coral);color:var(--coral);transform:scale(1.06)}
+.music-btn svg, .heart-btn svg{
+  width:22px;
+  height:22px;
+  display:block;
+  flex-shrink:0;
+}
 
-.eq-bars{display:none;align-items:flex-end;gap:2px;height:14px}
+.eq-bars{display:none;align-items:flex-end;gap:2.5px;height:16px}
 .eq-bars.active{display:flex}
 .eq-bar{width:3px;background:var(--coral);border-radius:1px;animation:eqAnim .8s ease-in-out infinite alternate}
 .eq-bar:nth-child(1){height:60%;animation-delay:.1s}
@@ -162,8 +266,8 @@ footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;po
 @keyframes eqAnim{0%{height:20%}100%{height:100%}}
 
 /* ---------- music pop-up hint ---------- */
-.music-pop{position:fixed;bottom:5.2rem;left:1.5rem;z-index:80;background:var(--ink);color:var(--ivory);padding:.6rem 1rem;border-radius:.5rem;font-size:.75rem;letter-spacing:.03em;box-shadow:0 10px 25px rgba(0,0,0,.15);pointer-events:none;opacity:1;transform:translateY(0);transition:opacity .6s var(--ease),transform .6s var(--ease);animation:popBounce 2s ease-in-out infinite}
-.music-pop::after{content:"";position:absolute;bottom:-4px;left:1.2rem;width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
+.music-pop{position:fixed;bottom:5.6rem;left:1.4rem;z-index:80;background:var(--ink);color:var(--ivory);padding:.75rem 1.15rem;border-radius:.55rem;font-size:.88rem;font-weight:500;letter-spacing:.02em;box-shadow:0 10px 25px rgba(0,0,0,.2);pointer-events:none;opacity:1;transform:translateY(0);transition:opacity .6s var(--ease),transform .6s var(--ease);animation:popBounce 2s ease-in-out infinite}
+.music-pop::after{content:"";position:absolute;bottom:-4px;left:1.3rem;width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
 .music-pop.hide{opacity:0;transform:translateY(10px)}
 @keyframes popBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 </style>
@@ -198,9 +302,9 @@ footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;po
 
   <div class="badge" aria-hidden="true">
     <div class="spin">
-      <svg viewBox="0 0 100 100" width="112" height="112" fill="#211E17">
+      <svg viewBox="0 0 100 100" width="136" height="136" fill="#1A4D2E">
         <defs><path id="badgeCircle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
-        <text font-size="7.6" letter-spacing="2.4" font-family="Outfit,sans-serif" style="text-transform:uppercase">
+        <text font-size="8.4" font-weight="600" letter-spacing="2.2" font-family="Outfit,sans-serif" style="text-transform:uppercase">
           <textPath href="#badgeCircle" textLength="236">Happy Teacher&rsquo;s Day &middot; 2026 &middot;</textPath>
         </text>
       </svg>
@@ -210,7 +314,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;po
 
   <div class="scroll-hint" aria-hidden="true">
     <span>Scroll</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
   </div>
 </header>
 
@@ -226,7 +330,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;po
     </div>
     <div class="col-img">
       <div class="img-frame fade" style="--d:.15s">
-        <img id="parallaxImg" src="https://images.unsplash.com/photo-1572454591674-2739f30d8c40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxlbGVnYW50JTIwZmxvd2VyJTIwYm91cXVldHxlbnwwfHx8fDE3ODgwNzMzOTB8MA&ixlib=rb-4.1.0&q=85&w=1200&auto=format&fit=crop" alt="An elegant bouquet, a small token of appreciation for our teachers" />
+        <img id="parallaxImg" src="https://bloombyhappydoll.com/wp-content/uploads/2022/11/memory.jpeg" alt="An elegant bouquet, a small token of appreciation for our teachers" />
       </div>
       <p class="caption fade" style="--d:.25s">For you, today and always</p>
     </div>
@@ -423,29 +527,36 @@ footer{border-top:1px solid var(--line);text-align:center;padding:6rem 1.5rem;po
 var canvas = document.getElementById('bgCanvas');
 var ctx = canvas.getContext('2d');
 var pts = [];
-function resizeCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+function resizeCanvas(){ 
+  var dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * dpr; 
+  canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  ctx.scale(dpr, dpr);
+}
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 for(var i=0; i<35; i++){
   pts.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 0.8,
-    a: Math.random() * 0.4 + 0.1,
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 2.2 + 0.9,
+    a: Math.random() * 0.45 + 0.15,
     vy: -Math.random() * 0.4 - 0.1
   });
 }
 
 function renderDust(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
   pts.forEach(function(p){
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fillStyle = 'rgba(196,151,47,' + p.a + ')';
     ctx.fill();
     p.y += p.vy;
-    if(p.y < 0) { p.y = canvas.height; p.x = Math.random() * canvas.width; }
+    if(p.y < 0) { p.y = window.innerHeight; p.x = Math.random() * window.innerWidth; }
   });
   requestAnimationFrame(renderDust);
 }
@@ -469,7 +580,7 @@ var io = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   });
-}, { rootMargin: "0px 0px -60px 0px" });
+}, { rootMargin: "0px 0px -40px 0px" });
 document.querySelectorAll(".fade").forEach(function (el) { io.observe(el); });
 
 /* Parallax */
@@ -482,7 +593,7 @@ function onScroll() {
   heroInner.style.transform = "translateY(" + y * 0.15 + "px)";
   var fr = pImg.parentElement.getBoundingClientRect();
   var prog = (fr.top + fr.height / 2 - h / 2) / h;
-  pImg.style.transform = "translateY(" + (prog * -10) + "%) scale(1.18)";
+  pImg.style.transform = "translateY(" + (prog * -8) + "%) scale(1.12)";
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -512,7 +623,7 @@ function playChime() {
 }
 
 /* Confetti */
-var COLORS = ["#C4972F", "#E9C767", "#211E17", "#F2E8CE", "#D4AF37"];
+var COLORS = ["#1A4D2E", "#1E3A8A", "#C4972F", "#E9C767", "#211E17"];
 function fireConfetti() {
   playChime();
   if (!window.confetti) return;
@@ -547,9 +658,7 @@ document.getElementById("heartBtn").addEventListener("click", function(){
   fireConfetti();
 });
 
-/* ==========================================================================
-   BACKGROUND MUSIC ENGINE: Ambient Relax by VelarioMusic
-   ========================================================================== */
+/* Background Music Engine */
 var bgAudio = new Audio("https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3");
 bgAudio.loop = true;
 bgAudio.volume = 0.45;
